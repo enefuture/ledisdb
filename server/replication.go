@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/ledis"
-	"github.com/ledisdb/ledisdb/rpl"
+	"github.com/enefuture/ledisdb/ledis"
+	"github.com/enefuture/ledisdb/rpl"
 	"github.com/siddontang/go/log"
 	"github.com/siddontang/go/num"
 	"github.com/siddontang/go/sync2"

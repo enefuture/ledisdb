@@ -7,7 +7,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/store"
 	"github.com/siddontang/go/snappy"
 )
 

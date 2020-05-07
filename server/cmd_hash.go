@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/ledisdb/ledisdb/ledis"
+	"github.com/enefuture/ledisdb/ledis"
 )
 
 func hsetCommand(c *client) error {

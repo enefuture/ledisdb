@@ -5,9 +5,9 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/ledis"
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/config"
+	"github.com/enefuture/ledisdb/ledis"
+	"github.com/enefuture/ledisdb/store"
 )
 
 var configPath = flag.String("config", "", "ledisdb config file")

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/store"
 )
 
 var (

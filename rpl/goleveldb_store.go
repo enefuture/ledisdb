@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/config"
+	"github.com/enefuture/ledisdb/store"
 	"github.com/siddontang/go/num"
 )
 

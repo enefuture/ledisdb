@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/store"
 )
 
 type ibucket interface {
@@ -79,6 +79,7 @@ func (l *Ledis) newDB(index int) *DB {
 	return d
 }
 
+// 将indexVarBuf解码程对应的Db index
 func decodeDBIndex(buf []byte) (int, int, error) {
 	index, n := binary.Uvarint(buf)
 	if n == 0 {
@@ -91,6 +92,7 @@ func decodeDBIndex(buf []byte) (int, int, error) {
 	return int(index), n, nil
 }
 
+// 设置选择的DB的indexVarBuf
 func (db *DB) setIndex(index int) {
 	db.index = index
 	// the most size for varint is 10 bytes
@@ -100,6 +102,7 @@ func (db *DB) setIndex(index int) {
 	db.indexVarBuf = buf[0:n]
 }
 
+// 判断是否ek是否与当前db index一致，返回indexVarBuf的长度，读取数据应从这个之后
 func (db *DB) checkKeyIndex(buf []byte) (int, error) {
 	if len(buf) < len(db.indexVarBuf) {
 		return 0, fmt.Errorf("key is too small")
@@ -110,6 +113,7 @@ func (db *DB) checkKeyIndex(buf []byte) (int, error) {
 	return len(db.indexVarBuf), nil
 }
 
+//
 func (db *DB) newTTLChecker() *ttlChecker {
 	c := new(ttlChecker)
 	c.db = db

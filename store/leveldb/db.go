@@ -15,8 +15,8 @@ import (
 	"runtime"
 	"unsafe"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/store/driver"
+	"github.com/enefuture/ledisdb/config"
+	"github.com/enefuture/ledisdb/store/driver"
 )
 
 const defaultFilterBits int = 10

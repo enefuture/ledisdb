@@ -5,12 +5,12 @@ import (
 	"os"
 	"path"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/store/driver"
+	"github.com/enefuture/ledisdb/config"
+	"github.com/enefuture/ledisdb/store/driver"
 
-	_ "github.com/ledisdb/ledisdb/store/goleveldb"
-	_ "github.com/ledisdb/ledisdb/store/leveldb"
-	_ "github.com/ledisdb/ledisdb/store/rocksdb"
+	_ "github.com/enefuture/ledisdb/store/goleveldb"
+	_ "github.com/enefuture/ledisdb/store/leveldb"
+	_ "github.com/enefuture/ledisdb/store/rocksdb"
 )
 
 func getStorePath(cfg *config.Config) string {

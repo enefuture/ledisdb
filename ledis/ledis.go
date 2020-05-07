@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/rpl"
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/config"
+	"github.com/enefuture/ledisdb/rpl"
+	"github.com/enefuture/ledisdb/store"
 	"github.com/siddontang/go/filelock"
 	"github.com/siddontang/go/log"
 )

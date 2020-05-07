@@ -5,7 +5,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/ledisdb/ledisdb/config"
+	"github.com/enefuture/ledisdb/config"
 	"github.com/siddontang/goredis"
 )
 

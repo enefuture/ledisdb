@@ -48,7 +48,7 @@ Then you will find all the binary build on `./bin` directory.
 
     It will install leveldb at /usr/local/leveldb and snappy at /usr/local/snappy by default.
 
-    LedisDB uses the modified LevelDB for better performance. [Details.](https://github.com/ledisdb/ledisdb/wiki/leveldb-source-modification)
+    LedisDB uses the modified LevelDB for better performance. [Details.](https://github.com/enefuture/ledisdb/wiki/leveldb-source-modification)
 
     You can easily use other LevelDB versions (like Hyper LevelDB or Basho LevelDB) instead, as long as the header files are in `include/leveldb`, not `include/hyperleveldb` or any other location.
 
@@ -120,8 +120,8 @@ If you don't use a configuration, LedisDB will use the default for you.
 ## Package Example
     
     import (
-      lediscfg "github.com/ledisdb/ledisdb/config"
-      "github.com/ledisdb/ledisdb/ledis"
+      lediscfg "github.com/enefuture/ledisdb/config"
+      "github.com/enefuture/ledisdb/ledis"
     )
 
     # Use Ledis's default config
@@ -153,21 +153,21 @@ See [CONTRIBUTING.md] .
 
 ## Benchmark
 
-See [benchmark](https://github.com/ledisdb/ledisdb/wiki/Benchmark) for more.
+See [benchmark](https://github.com/enefuture/ledisdb/wiki/Benchmark) for more.
 
 ## Todo
 
-See [Issues todo](https://github.com/ledisdb/ledisdb/issues?labels=todo&page=1&state=open)
+See [Issues todo](https://github.com/enefuture/ledisdb/issues?labels=todo&page=1&state=open)
 
 ## Client
 
-See [Clients](https://github.com/ledisdb/ledisdb/wiki/Clients) to find or contribute LedisDB client.
+See [Clients](https://github.com/enefuture/ledisdb/wiki/Clients) to find or contribute LedisDB client.
 
 ## Links
 
 + [Official Website](https://ledisdb.io)
-+ [GoDoc](https://godoc.org/github.com/ledisdb/ledisdb)
-+ [Server Commands](https://github.com/ledisdb/ledisdb/wiki/Commands)
++ [GoDoc](https://godoc.org/github.com/enefuture/ledisdb)
++ [Server Commands](https://github.com/enefuture/ledisdb/wiki/Commands)
 
 ## Caveat
 

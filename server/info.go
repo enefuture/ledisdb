@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ledisdb/ledisdb/ledis"
+	"github.com/enefuture/ledisdb/ledis"
 	"github.com/siddontang/go/sync2"
 )
 

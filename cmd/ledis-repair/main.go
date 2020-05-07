@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 
-	"github.com/ledisdb/ledisdb/config"
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/config"
+	"github.com/enefuture/ledisdb/store"
 )
 
 var fileName = flag.String("config", "", "ledisdb config file")

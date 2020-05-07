@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/store"
 	"github.com/siddontang/go/num"
 )
 
@@ -34,15 +34,17 @@ func checkValueSize(value []byte) error {
 	return nil
 }
 
+// key的加密格式 dbnum+type+key
 func (db *DB) encodeKVKey(key []byte) []byte {
 	ek := make([]byte, len(key)+1+len(db.indexVarBuf))
-	pos := copy(ek, db.indexVarBuf)
+	pos := copy(ek, db.indexVarBuf) //控制在那个DB上
 	ek[pos] = KVType
 	pos++
 	copy(ek[pos:], key)
 	return ek
 }
 
+// 将加密的ek解码成对应的存储key
 func (db *DB) decodeKVKey(ek []byte) ([]byte, error) {
 	pos, err := db.checkKeyIndex(ek)
 	if err != nil {
@@ -57,17 +59,20 @@ func (db *DB) decodeKVKey(ek []byte) ([]byte, error) {
 	return ek[pos:], nil
 }
 
+// 加密对应最小的key，当key为空值时
 func (db *DB) encodeKVMinKey() []byte {
 	ek := db.encodeKVKey(nil)
 	return ek
 }
 
+// 加密对应的最大key，当type为下一个类型时
 func (db *DB) encodeKVMaxKey() []byte {
 	ek := db.encodeKVKey(nil)
 	ek[len(ek)-1] = KVType + 1
 	return ek
 }
 
+// key自增实现
 func (db *DB) incr(key []byte, delta int64) (int64, error) {
 	if err := checkKeySize(key); err != nil {
 		return 0, err

@@ -3,11 +3,12 @@ package ledis
 import (
 	"sync"
 
-	"github.com/ledisdb/ledisdb/rpl"
-	"github.com/ledisdb/ledisdb/store"
+	"github.com/enefuture/ledisdb/rpl"
+	"github.com/enefuture/ledisdb/store"
 	"github.com/siddontang/go/log"
 )
 
+// 批量操作
 type batch struct {
 	l *Ledis
 

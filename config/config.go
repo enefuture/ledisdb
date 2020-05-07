@@ -167,11 +167,9 @@ func NewConfigWithFile(fileName string) (*Config, error) {
 
 func NewConfigWithData(data []byte) (*Config, error) {
 	cfg := NewConfigDefault()
-
 	if err := toml.Unmarshal(data, cfg); err != nil {
 		return nil, fmt.Errorf("newConfigwithData: unmarashal: %s", err)
 	}
-
 	cfg.adjust()
 
 	return cfg, nil
@@ -179,7 +177,6 @@ func NewConfigWithData(data []byte) (*Config, error) {
 
 func NewConfigDefault() *Config {
 	cfg := new(Config)
-	cfg.m = new(sync.RWMutex)
 
 	cfg.Addr = DefaultAddr
 	cfg.HttpAddr = ""
@@ -230,6 +227,9 @@ func getDefault(d int, s int) int {
 }
 
 func (cfg *Config) adjust() {
+	if cfg.m == nil {
+		cfg.m = &sync.RWMutex{}
+	}
 	cfg.LevelDB.adjust()
 
 	cfg.RocksDB.adjust()
