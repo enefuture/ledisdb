@@ -1,6 +1,6 @@
-INSTALL_PATH ?= $(CURDIR)
-
-$(shell ./tools/build_config.sh build_config.mk $INSTALL_PATH)
+# INSTALL_PATH ?= $(CURDIR)
+#
+# $(shell ./tools/build_config.sh build_config.mk $INSTALL_PATH)
 
 include build_config.mk
 
@@ -9,11 +9,11 @@ export CGO_CXXFLAGS
 export CGO_LDFLAGS
 export LD_LIBRARY_PATH
 export DYLD_LIBRARY_PATH
-export GO_BUILD_TAGS
+export GO_BUILD_TAGS=rocksdb
 export GO111MODULE=on
 
 
-PACKAGES ?= $(shell GO111MODULE=on go list -mod=vendor ./... | grep -v /vendor/)
+# PACKAGES ?= $(shell GO111MODULE=on go list -mod=vendor ./... | grep -v /vendor/)
 
 all: build
 
