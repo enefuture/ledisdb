@@ -2,7 +2,7 @@
 #
 # $(shell ./tools/build_config.sh build_config.mk $INSTALL_PATH)
 
-include build_config.mk
+# include build_config.mk
 
 export CGO_CFLAGS
 export CGO_CXXFLAGS
